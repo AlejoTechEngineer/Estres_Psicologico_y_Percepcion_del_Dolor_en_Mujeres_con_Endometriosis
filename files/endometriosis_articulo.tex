@@ -1,0 +1,795 @@
+% !TEX root = endometriosis_articulo.tex
+% ============================================================
+%  ESTRÉS PSICOLÓGICO Y PERCEPCIÓN DEL DOLOR EN MUJERES
+%  CON ENDOMETRIOSIS — Revisión Narrativa con Estrategia de Búsqueda Sistemática
+%
+%  Sandoval Carreño · Gómez Salazar · Estévez Caraballo
+%  Programa de Psicología — Universitaria de Colombia
+%  Bogotá, Colombia — 2025
+%
+%  Compilar con: pdflatex → biber → pdflatex × 2
+% ============================================================
+
+% ── Clase y opciones ────────────────────────────────────────
+\documentclass[12pt, a4paper]{article}
+
+% ── Codificación y fuentes ──────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}           % Mejora tipográfica automática
+\usepackage{lmodern}
+
+% ── Idioma ──────────────────────────────────────────────────
+\usepackage[spanish, es-tabla]{babel}
+
+% ── Geometría de página ─────────────────────────────────────
+\usepackage[
+  top=2.5cm, bottom=2.5cm,
+  inner=3cm, outer=2cm,
+  headheight=24pt
+]{geometry}
+
+% ── Colores ─────────────────────────────────────────────────
+\usepackage[dvipsnames, table]{xcolor}
+\definecolor{darkblue}{HTML}{1B3A5C}
+\definecolor{midblue}{HTML}{2E6DA4}
+\definecolor{lightblue}{HTML}{D6E4F0}
+\definecolor{gold}{HTML}{C8960C}
+\definecolor{subtlegray}{HTML}{555555}
+\definecolor{rowA}{HTML}{EAF2FB}
+\definecolor{rowB}{HTML}{FFFFFF}
+
+% ── Encabezados y pies de página ────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{subtlegray}\textit{Estrés psicológico y percepción del dolor en endometriosis}}
+\fancyhead[R]{\small\color{subtlegray}\textit{Sandoval, Gómez \& Estévez (2025)}}
+\fancyfoot[C]{\small\color{subtlegray}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{midblue}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0pt}
+
+% ── Interlineado ─────────────────────────────────────────────
+\usepackage{setspace}
+\setstretch{1.5}
+
+% ── Párrafos ─────────────────────────────────────────────────
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0.4em}
+
+% ── Secciones: estilo personalizado ─────────────────────────
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{darkblue}\large\bfseries\scshape}
+  {\thesection.}{0.8em}{}
+  [\vspace{-0.3em}{\color{gold}\hrule height 1.5pt}\vspace{0.4em}]
+
+\titleformat{\subsection}
+  {\color{midblue}\normalsize\bfseries}
+  {\thesubsection.}{0.7em}{}
+
+\titleformat{\subsubsection}
+  {\color{darkblue}\normalsize\itshape\bfseries}
+  {\thesubsubsection.}{0.7em}{}
+
+\titlespacing{\section}{0pt}{1.6em}{0.8em}
+\titlespacing{\subsection}{0pt}{1.2em}{0.5em}
+\titlespacing{\subsubsection}{0pt}{0.9em}{0.3em}
+
+% ── Tablas ───────────────────────────────────────────────────
+\usepackage{multicol}
+\setlength{\columnsep}{1.2em}
+\setlength{\columnseprule}{0.4pt}
+\renewcommand{\columnseprulecolor}{\color{midblue!40}}
+\usepackage{changepage}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\renewcommand{\arraystretch}{1.4}
+
+% ── Listas ───────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize]{
+  leftmargin=1.8em,
+  itemsep=0.2em,
+  topsep=0.4em,
+  label=\textcolor{gold}{\textbullet}
+}
+\setlist[enumerate]{leftmargin=1.8em, itemsep=0.2em, topsep=0.4em}
+
+% ── Cajas y entornos destacados ──────────────────────────────
+\usepackage{mdframed}
+\mdfdefinestyle{pregunta}{
+  linecolor=gold,
+  linewidth=1.5pt,
+  leftline=true, rightline=false,
+  topline=false, bottomline=false,
+  backgroundcolor=lightblue!30,
+  innerleftmargin=12pt,
+  innerrightmargin=8pt,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  skipabove=6pt, skipbelow=6pt,
+}
+\mdfdefinestyle{resumen}{
+  linecolor=midblue,
+  linewidth=1pt,
+  backgroundcolor=lightblue!20,
+  roundcorner=4pt,
+  innerleftmargin=14pt,
+  innerrightmargin=14pt,
+  innertopmargin=10pt,
+  innerbottommargin=10pt,
+  skipabove=6pt, skipbelow=6pt,
+}
+
+% ── Hipervínculos ─────────────────────────────────────────────
+\usepackage[
+  colorlinks=true,
+  linkcolor=midblue,
+  citecolor=darkblue,
+  urlcolor=midblue,
+  bookmarks=true,
+  bookmarksopen=true,
+  pdftitle={Estrés Psicológico y Percepción del Dolor en Mujeres con Endometriosis},
+  pdfauthor={Sandoval Carreño, Gómez Salazar, Estévez Caraballo},
+  pdfsubject={Revisión Narrativa con Estrategia de Búsqueda Sistemática},
+  pdfkeywords={endometriosis, estrés crónico, percepción del dolor, eje HPA, sensibilización central}
+]{hyperref}
+\usepackage{url}
+
+% ── Bibliografía APA 7 ───────────────────────────────────────
+\usepackage[
+  style=apa,
+  backend=biber,
+  sortcites=true,
+  sorting=nyt,
+  language=spanish
+]{biblatex}
+\addbibresource{referencias.bib}
+
+% ── Utilidades ───────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{qrcode}
+\usepackage{amsmath}
+\usepackage{caption}
+\captionsetup{font=small, labelfont={bf,color=darkblue}, textfont=it}
+\usepackage{abstract}
+\renewcommand{\abstractnamefont}{\color{darkblue}\bfseries\scshape\large}
+\renewcommand{\abstracttextfont}{\small}
+
+% ── Comando auxiliar: negrita en texto ───────────────────────
+\newcommand{\kw}[1]{\textbf{\textcolor{darkblue}{#1}}}
+
+% ═══════════════════════════════════════════════════════════════
+%  PORTADA
+% ═══════════════════════════════════════════════════════════════
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  {\small\color{subtlegray}\scshape Universitaria de Colombia \quad·\quad
+   Programa de Psicología \quad·\quad Bogotá, Colombia}\\[0.6em]
+  {\color{midblue!60}\rule{\linewidth}{0.5pt}}\\[1.8em]
+
+  {\color{darkblue}\LARGE\bfseries
+   Estrés Psicológico y Percepción del Dolor\\[0.3em]
+   en Mujeres con Endometriosis}\\[0.8em]
+
+  {\color{midblue}\large\itshape Revisión Narrativa con Estrategia de Búsqueda Sistemática}\\[2em]
+
+  {\color{gold}\rule{0.45\linewidth}{1.5pt}}\\[2em]
+
+  {\large
+    Rosaura Sandoval Carreño\\[0.25em]
+    Sara Nohelia Gómez Salazar\\[0.25em]
+    Ana María Estévez Caraballo}\\[0.6em]
+
+  {\small\color{subtlegray}
+    Estudiantes de último semestre de Psicología\\
+    Universitaria de Colombia\\
+    Bogotá, D.C., Colombia\\[1.6em]
+    \textit{Correspondencia:}
+    \href{mailto:psicologia@unicolombia.edu.co}{psicologia@unicolombia.edu.co}}\\[2em]
+
+  {\color{gold}\rule{0.35\linewidth}{0.8pt}}\\[1em]
+  {\small\color{darkblue}\bfseries\scshape Repositorio del Proyecto}\\[0.8em]
+  \qrcode[hyperlink, height=4cm]{https://github.com/AlejoTechEngineer/Estr-s_Psicol-gico_y_Percepci-n_del_Dolor_en_Mujeres_con_Endometriosis}\\[0.6em]
+  {\scriptsize\color{subtlegray}
+    \url{https://github.com/AlejoTechEngineer/Estr-s_Psicol-gico_y_Percepci-n_del_Dolor_en_Mujeres_con_Endometriosis}}\\[1.8em]
+
+  {\color{midblue!60}\rule{\linewidth}{0.5pt}}\\[0.6em]
+  {\small\color{subtlegray} Bogotá, Colombia \quad·\quad 2025}
+\end{center}
+
+\newpage
+\pagestyle{fancy}
+
+% ══════════════════════════════════════════════════════
+%  RESUMEN Y ABSTRACT — una columna, ancho reducido
+% ══════════════════════════════════════════════════════
+\begin{adjustwidth}{0.06\textwidth}{0.06\textwidth}
+
+\section*{Resumen}
+\addcontentsline{toc}{section}{Resumen}
+
+\begin{mdframed}[style=resumen]
+\noindent
+\kw{Objetivo:} Examinar, a partir de la evidencia científica disponible, la relación
+entre el estrés psicológico y la percepción del dolor en mujeres en edad reproductiva
+con endometriosis, identificando los mecanismos neurobiológicos implicados y las
+estrategias de intervención desde la psicología de la salud.
+
+\vspace{0.5em}
+\kw{Metodología:} Revisión narrativa con estrategia de búsqueda documentada en
+PubMed, SciELO y Google Scholar, organizada mediante categorías temáticas que integran
+variables neurobiológicas, psicológicas y clínicas.
+
+\vspace{0.5em}
+\kw{Resultados:} La evidencia muestra que el estrés psicológico crónico activa el eje
+hipotálamo-hipófisis-adrenal (HPA) y el sistema nervioso autónomo, elevando los niveles
+de cortisol y catecolaminas, lo que favorece un estado proinflamatorio, la proliferación
+del tejido endometrial ectópico y la sensibilización central del dolor. La relación entre
+estrés y dolor es bidireccional y se perpetúa en un ciclo de retroalimentación negativa.
+
+\vspace{0.5em}
+\kw{Conclusión:} La endometriosis requiere un abordaje biopsicosocial que integre
+mecanismos neurobiológicos y estrategias desde la psicología de la salud orientadas al
+cuidado del sistema nervioso y la modulación del dolor. La implementación de terapia
+cognitivo-conductual, técnicas mente-cuerpo y educación en neurociencia del dolor muestra
+evidencia prometedora para la mejora de la calidad de vida.
+
+\vspace{0.8em}
+\noindent\kw{Palabras clave:} endometriosis, estrés crónico, percepción del dolor, eje HPA,
+sensibilización central, psicología de la salud, enfoque biopsicosocial.
+\end{mdframed}
+
+\vspace{1.5em}
+
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+
+\begin{mdframed}[style=resumen]
+\noindent
+\kw{Objective:} To examine, based on available scientific evidence, the relationship
+between psychological stress and pain perception in women of reproductive age with
+endometriosis, identifying the neurobiological mechanisms involved and health psychology
+intervention strategies.
+
+\vspace{0.5em}
+\kw{Methodology:} Narrative review with a documented search strategy of scientific
+literature published in PubMed, SciELO, and Google Scholar, organized through thematic
+categories integrating neurobiological, psychological, and clinical variables.
+
+\vspace{0.5em}
+\kw{Results:} Evidence indicates that chronic psychological stress activates the HPA axis
+and autonomic nervous system, elevating cortisol and catecholamine levels, promoting a
+pro-inflammatory state, and contributing to ectopic endometrial tissue proliferation and
+central pain sensitization. The stress-pain relationship is bidirectional and
+self-perpetuating.
+
+\vspace{0.5em}
+\kw{Conclusion:} Endometriosis requires a biopsychosocial approach integrating
+neurobiological mechanisms and health psychology strategies oriented toward nervous system
+care and pain modulation. Cognitive-behavioral therapy, mind-body techniques, and pain
+neuroscience education show promising evidence for improving quality of life.
+
+\vspace{0.8em}
+\noindent\kw{Keywords:} endometriosis, chronic stress, pain perception, HPA axis,
+central sensitization, health psychology, biopsychosocial model.
+\end{mdframed}
+
+\end{adjustwidth}
+
+\vspace{1.5em}
+
+% ── Inicio del cuerpo en DOS COLUMNAS ───────────────────────
+\twocolumn[{%
+\vspace{0.4em}
+{\color{midblue!60}\hrule height 0.4pt}
+\vspace{0.8em}
+}]
+\pagestyle{fancy}
+
+% ═══════════════════════════════════════════════════════════════
+%  1. INTRODUCCIÓN
+% ═══════════════════════════════════════════════════════════════
+\section{Introducción}
+
+La endometriosis es una enfermedad inflamatoria crónica estrógeno-dependiente caracterizada
+por la presencia y proliferación de tejido endometrial funcional fuera de la cavidad uterina.
+Según la Organización Mundial de la Salud \parencite{WHO2023}, aproximadamente el 10\,\% de
+las mujeres en edad reproductiva a nivel global padecen esta condición, lo que equivale a más
+de 190 millones de personas. Su principal manifestación clínica es el dolor pélvico crónico
+relacionado con el ciclo menstrual, que en muchos casos alcanza una intensidad incapacitante y
+se extiende de forma persistente más allá de los períodos menstruales \parencite{Zondervan2020}.
+
+La complejidad fisiopatológica de la endometriosis ha motivado una creciente línea de
+investigación orientada a comprender la participación de mecanismos centrales en la regulación
+del dolor, más allá de los factores periféricos asociados a las lesiones. En este contexto, el
+estrés psicológico ha emergido como una variable de particular relevancia. A nivel
+neurobiológico, el estrés activa el eje hipotálamo-hipófisis-adrenal (HPA) y el sistema
+nervioso autónomo (SNA), generando alteraciones en la regulación hormonal, inmunológica y
+neuronal que modulan la experiencia dolorosa y pueden favorecer procesos inflamatorios y
+fenómenos de sensibilización central \parencite{Appleyard2020, Maddern2020}.
+
+La trayectoria diagnóstica de la enfermedad añade una carga psicológica adicional
+significativa. El retraso promedio en el diagnóstico, que oscila entre 7 y 10 años desde el
+inicio de los síntomas \parencite{Nnoaham2011}, somete a las pacientes a un período prolongado
+de invalidación clínica que intensifica los niveles de estrés y contribuye al desarrollo de
+comorbilidades como ansiedad y depresión. Este escenario configura una relación bidireccional
+entre la sintomatología de la enfermedad y el bienestar psicológico.
+
+Desde una perspectiva biopsicosocial, la endometriosis no puede comprenderse como una
+patología exclusivamente ginecológica. Las repercusiones psicológicas, sociales y funcionales
+que implica exigen un marco de análisis que integre factores biológicos y psicológicos en la
+explicación de la experiencia del dolor y en el diseño de intervenciones clínicas
+\parencite{Szypłowska2023}. La brecha existente en el abordaje psicológico integral de
+esta enfermedad —particularmente evidente en el contexto latinoamericano— subraya la
+pertinencia de profundizar en esta temática desde la psicología de la salud y de generar
+evidencia aplicable a los sistemas sanitarios de la región.
+
+\subsection{Pregunta de Investigación}
+
+\begin{mdframed}[style=pregunta]
+\noindent\itshape
+¿Cuál es la relación entre el estrés psicológico y la percepción del dolor en mujeres en
+edad reproductiva con endometriosis, según la evidencia científica disponible, y qué
+estrategias de intervención desde la psicología de la salud se han identificado para su
+abordaje?
+\end{mdframed}
+
+\subsection{Objetivos}
+
+\subsubsection{Objetivo General}
+
+Examinar, a partir de la evidencia científica disponible, la relación entre el estrés
+psicológico y la percepción del dolor en mujeres en edad reproductiva con endometriosis, con
+el fin de aportar fundamentos teóricos para el desarrollo de abordajes integrales desde la
+psicología de la salud.
+
+\subsubsection{Objetivos Específicos}
+
+\begin{itemize}
+  \item Describir los mecanismos neurobiológicos mediante los cuales el estrés psicológico
+        modula la percepción del dolor en mujeres con endometriosis, con énfasis en la
+        activación del eje HPA, el sistema nervioso autónomo y los procesos de
+        sensibilización central.
+
+  \item Identificar los principales factores cognitivos y emocionales asociados al estrés en
+        esta población y su impacto en la calidad de vida.
+
+  \item Analizar estrategias de intervención desde la psicología de la salud orientadas al
+        manejo del estrés y la modulación del dolor en mujeres con endometriosis.
+\end{itemize}
+
+% ═══════════════════════════════════════════════════════════════
+%  2. METODOLOGÍA
+% ═══════════════════════════════════════════════════════════════
+\section{Metodología}
+
+Se llevó a cabo una revisión narrativa de literatura científica con estrategia de búsqueda
+documentada. El proceso de búsqueda, selección y síntesis de la evidencia se estructuró
+mediante criterios de inclusión y exclusión predefinidos, operadores booleanos y fuentes
+indexadas, siguiendo un procedimiento sistemático y transparente orientado a minimizar el
+sesgo de selección.
+
+\subsection{Estrategia de Búsqueda}
+
+La búsqueda bibliográfica se realizó entre enero y abril de 2025 en las bases de datos
+PubMed/MEDLINE, SciELO y Google Scholar, empleando los siguientes términos combinados
+mediante operadores booleanos \textbf{AND} y \textbf{OR}:
+
+\begin{itemize}
+  \item \textit{endometriosis} AND \textit{psychological stress} AND \textit{pain perception}
+  \item \textit{endometriosis} AND \textit{HPA axis} AND \textit{chronic pain}
+  \item \textit{endometriosis} AND \textit{central sensitization}
+  \item \textit{endometriosis} AND \textit{mental health} AND \textit{quality of life}
+  \item \textit{endometriosis} AND (\textit{cognitive-behavioral therapy} OR \textit{mindfulness})
+\end{itemize}
+
+\subsection{Criterios de Selección}
+
+\subsubsection{Criterios de Inclusión}
+
+\begin{itemize}
+  \item Estudios publicados entre 2010 y 2025.
+  \item Artículos en español, inglés o portugués.
+  \item Estudios que abordaran la relación entre estrés psicológico, dolor y endometriosis,
+        o aspectos neurobiológicos del dolor crónico en esta población.
+  \item Revisiones sistemáticas, metaanálisis, ensayos clínicos controlados y estudios
+        observacionales con diseño metodológico explícito.
+\end{itemize}
+
+\subsubsection{Criterios de Exclusión}
+
+\begin{itemize}
+  \item Estudios que no reportaran resultados relacionados con las variables de interés.
+  \item Publicaciones sin revisión por pares.
+  \item Estudios con poblaciones menores de 18 años o con diagnósticos distintos a
+        endometriosis confirmada.
+\end{itemize}
+
+\subsection{Variables Analizadas}
+
+Con base en los objetivos, se definieron las siguientes categorías de análisis:
+
+\begin{itemize}
+  \item \textbf{Marcadores biológicos del estrés:} niveles de cortisol y catecolaminas.
+  \item \textbf{Instrumentos de evaluación:} Escala de Estrés Percibido (PSS) y
+        equivalentes validados.
+  \item \textbf{Mecanismos de sensibilización central:} hiperalgesia, alodinia, umbrales
+        del dolor.
+  \item \textbf{Factores cognitivos y emocionales:} catastrofización, kinesiofobia,
+        ansiedad, depresión.
+  \item \textbf{Estrategias de afrontamiento e intervención psicológica.}
+\end{itemize}
+
+\subsection{Proceso de Análisis}
+
+La información extraída fue organizada en categorías temáticas que permitieron identificar
+patrones, convergencias y divergencias entre los hallazgos. La síntesis se realizó de forma
+narrativa, articulando los resultados en torno a tres ejes: mecanismos neurobiológicos del
+estrés y el dolor, impacto psicológico de la endometriosis, y estrategias de intervención
+clínica.
+
+% ═══════════════════════════════════════════════════════════════
+%  3. RESULTADOS
+% ═══════════════════════════════════════════════════════════════
+\section{Resultados}
+
+La revisión evidencia que la endometriosis constituye una enfermedad sistémica en la que las
+dimensiones psíquica y somática son inseparables. Los hallazgos se organizan en tres
+categorías temáticas: mecanismos neurobiológicos, impacto psicológico y síntesis de estudios.
+
+\subsection{Mecanismos Neurobiológicos del Estrés y la Percepción del Dolor}
+
+\subsubsection{Respuesta Neuroendocrina al Estrés}
+
+El estrés crónico desencadena una activación sostenida del eje HPA, con la consiguiente
+liberación de corticotropina (CRH) desde el hipotálamo, adrenocorticotropina (ACTH) desde la
+hipófisis y, finalmente, cortisol desde la corteza adrenal. Paralelamente, el sistema nervioso
+simpático libera catecolaminas como adrenalina y noradrenalina. En condiciones de estrés
+crónico, los niveles persistentemente elevados de cortisol alteran la funcionalidad del sistema
+inmunológico y promueven un estado proinflamatorio caracterizado por el aumento de
+interleucina-6 (IL-6), factor de necrosis tumoral alfa (TNF-$\alpha$) y prostaglandinas. Este
+entorno inflamatorio se asocia con la proliferación del tejido endometrial ectópico y
+sensibiliza las vías nociceptivas \parencite{Chen2025, Machairiotis2021}.
+
+\subsubsection{Sensibilización Central}
+
+Uno de los mecanismos clave en la endometriosis es la \textit{sensibilización central},
+definida como la amplificación de las señales nociceptivas por parte del sistema nervioso
+central (SNC). Este fenómeno explica la disociación frecuentemente observada entre la
+extensión anatómica de las lesiones endometriales y la intensidad subjetiva del dolor: pacientes
+con lesiones mínimas pueden referir dolor severo, mientras otras con lesiones extensas reportan
+sintomatología moderada \parencite{AsSanie2012, Morotti2014}. La sensibilización central
+involucra modificaciones en la plasticidad neuronal a nivel del asta dorsal de la médula espinal,
+y favorece el desarrollo de \textit{hiperalgesia} y \textit{alodinia} \parencite{Maddern2020}.
+
+\subsubsection{Circuitos Cerebrales del Dolor}
+
+La amígdala, el córtex prefrontal (CPF) y la sustancia gris periacueductal (PAG) participan de
+forma central en la modulación descendente del dolor. El estrés crónico altera la conectividad
+funcional de estos circuitos, potenciando la respuesta dolorosa y reduciendo la eficacia de los
+mecanismos inhibitorios endógenos \parencite{Tracey2021, Zhang2019}. La hiperactivación
+amigdalar asociada al estrés reduce la capacidad del CPF para modular la respuesta dolorosa,
+perpetuando el ciclo de dolor e inflamación \parencite{Apkarian2021}.
+
+\subsection{Impacto Psicológico}
+
+\subsubsection{Prevalencia de Comorbilidades Psicológicas}
+
+La evidencia revisada documenta una elevada prevalencia de comorbilidades psicológicas.
+\textcite{VanBarneveld2021}, en un metaanálisis que incluyó 25 estudios, encontraron que las
+mujeres con endometriosis presentan significativamente mayores niveles de depresión y ansiedad
+en comparación con la población general. \textcite{Wang2021}, en una revisión con más de
+20.000 participantes, confirmaron el deterioro significativo de la salud mental y la calidad de
+vida. \textcite{Warzecha2020} reportaron que más del 75\,\% de las participantes en su cohorte
+manifestaban síntomas depresivos clínicamente relevantes.
+
+\subsubsection{Factores Cognitivos}
+
+La \textit{catastrofización del dolor} —tendencia a magnificar la amenaza percibida del dolor,
+rumiar sobre él y sentirse incapaz de afrontarlo— se asocia con mayor intensidad del dolor,
+mayor discapacidad funcional y peor calidad de vida \parencite{Aerts2018}. La
+\textit{kinesiofobia} (miedo al movimiento por anticipación del dolor) genera conductas de
+evitación que contribuyen al desacondicionamiento físico, al aislamiento social y al incremento
+del estrés percibido, perpetuando el ciclo de dolor y deterioro emocional \parencite{Aerts2018}.
+
+\subsubsection{Factores Emocionales y Sociales}
+
+Las pacientes reportan frecuentemente sentimientos de incomprensión por parte de su entorno
+familiar, laboral y sanitario, contribuyendo al aislamiento social y al deterioro de las redes
+de apoyo \parencite{Aerts2018}. La normalización cultural del dolor menstrual constituye un
+obstáculo tanto para el diagnóstico temprano como para la legitimación de la experiencia
+subjetiva. Factores como la estigmatización, el limitado acceso a atención especializada y la
+normalización del dolor menstrual —frecuentes en el contexto latinoamericano— podrían
+contribuir a agravar el impacto psicológico, aunque esta hipótesis requiere investigación
+empírica específica en la región.
+
+\subsection{Síntesis de Estudios Neurobiológicos Clave}
+
+La Tabla~\ref{tab:estudios} presenta los estudios de mayor relevancia neurobiológica
+identificados en la revisión.
+
+\begin{table*}[ht]
+\centering
+\caption{Síntesis de estudios neurobiológicos clave revisados}
+\label{tab:estudios}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{3.0cm}
+  >{\raggedright\arraybackslash}p{3.8cm}
+  >{\raggedright\arraybackslash}p{2.4cm}
+  >{\raggedright\arraybackslash}X
+}
+\toprule
+\rowcolor{darkblue}
+\textcolor{white}{\textbf{Autor / Año}} &
+\textcolor{white}{\textbf{Título}} &
+\textcolor{white}{\textbf{Tipo de Estudio}} &
+\textcolor{white}{\textbf{Aportes Principales}} \\
+\midrule
+\rowcolor{rowA}
+Tracey et al.\ (2021) &
+\textit{Brain circuits for pain and its treatment} &
+Revisión científica &
+Describe circuitos cerebrales del dolor: amígdala, CPF, PAG y vías descendentes de modulación. \\
+
+\rowcolor{rowB}
+Apkarian et al.\ (2021) &
+\textit{Pain and brain networks} &
+Revisión &
+Explica la neuromatriz del dolor y su modulación emocional mediante redes neuronales. \\
+
+\rowcolor{rowA}
+Zhang et al.\ (2019) &
+\textit{Prefrontal-amygdala circuit in pain modulation} &
+Experimental (neuroimagen) &
+Demuestra la conexión amígdala–CPF–PAG como circuito crítico en estrés y dolor. \\
+
+\rowcolor{rowB}
+Chen et al.\ (2025) &
+\textit{Neuroendocrine–immune axis in endometriosis} &
+Revisión &
+Establece relación entre eje HPA, inflamación sistémica y dolor pélvico crónico. \\
+
+\rowcolor{rowA}
+Morotti et al.\ (2014) &
+\textit{Central sensitization in endometriosis} &
+Revisión clínica &
+Documenta la sensibilización central como mecanismo del dolor desproporcionado a la extensión lesional. \\
+
+\rowcolor{rowB}
+Finnerup et al.\ (2023) &
+\textit{Neuromodulation in chronic pain} &
+Revisión clínica &
+Sistematiza intervenciones de neuromodulación para reducir dolor crónico estimulando circuitos inhibitorios. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+% ═══════════════════════════════════════════════════════════════
+%  4. DISCUSIÓN
+% ═══════════════════════════════════════════════════════════════
+\section{Discusión}
+
+Los hallazgos de la revisión son consistentes con la comprensión de que la endometriosis no debe comprenderse únicamente
+como una enfermedad ginecológica de origen periférico, sino como una condición crónica compleja
+con importantes repercusiones psicológicas, neurobiológicas y sociales. Esta perspectiva,
+coherente con el modelo biopsicosocial y consolidada en la literatura sobre enfermedades
+crónicas, resulta especialmente pertinente para explicar la experiencia de dolor en esta
+población.
+
+Uno de los hallazgos más consistentes es la \textbf{relación bidireccional} entre el estrés
+psicológico y la sintomatología de la endometriosis. El dolor persistente, la infertilidad
+asociada, las limitaciones funcionales y el prolongado proceso diagnóstico generan una carga
+emocional significativa que se traduce en niveles elevados de estrés crónico. A su vez, este
+estrés activa mecanismos neurobiológicos que intensifican la inflamación, se asocian con la
+proliferación del tejido endometrial ectópico y amplían la percepción del dolor
+\parencite{Wang2021, Machairiotis2021}. El resultado es un ciclo de retroalimentación negativa
+que compromete progresivamente el bienestar general.
+
+La \textit{sensibilización central} emerge como el mecanismo más relevante para explicar la
+complejidad del dolor en la endometriosis. La disociación entre la extensión de las lesiones y
+la intensidad del dolor subjetivo, documentada consistentemente en la literatura, sugiere que
+los mecanismos centrales de procesamiento desempeñan un papel determinante que supera la
+dimensión periférica de la inflamación \parencite{AsSanie2012}. Esta comprensión tiene
+implicaciones directas para el tratamiento: intervenciones exclusivamente quirúrgicas o
+farmacológicas periféricas resultarán insuficientes si no abordan simultáneamente la modulación
+central del dolor.
+
+El impacto del estrés sobre el eje HPA y los circuitos cerebrales del dolor subraya la
+necesidad de incorporar estrategias de regulación del sistema nervioso autónomo como componente
+central del tratamiento. La evidencia indica que técnicas como la meditación \textit{mindfulness},
+el yoga terapéutico y la respiración diafragmática reducen la reactividad del eje HPA, disminuyen
+los niveles de cortisol y favorecen la activación parasimpática \parencite{Tracey2021, Apkarian2021}.
+
+Desde una perspectiva cognitiva, la catastrofización del dolor y la kinesiofobia constituyen
+factores que amplifican la experiencia dolorosa de manera independiente a la severidad clínica.
+\textcite{Aerts2018} documentan que las intervenciones orientadas a modificar estos patrones
+producen mejoras significativas en el bienestar emocional y la funcionalidad. La Terapia
+Cognitivo-Conductual (TCC), especialmente los protocolos adaptados para dolor crónico, muestra
+evidencia robusta en esta dirección.
+
+Finalmente, la influencia de factores socioculturales en el contexto latinoamericano merece
+atención especial. La normalización del dolor menstrual, el estigma asociado y la limitada
+educación en salud reproductiva contribuyen a retrasar el diagnóstico y a incrementar el
+sufrimiento emocional. Esto exige que las intervenciones psicológicas incorporen una dimensión
+psicoeducativa que visibilice la endometriosis como enfermedad crónica y legitime la experiencia
+subjetiva de las pacientes.
+
+% ═══════════════════════════════════════════════════════════════
+%  5. PROPUESTA DE INTERVENCIÓN
+% ═══════════════════════════════════════════════════════════════
+\section{Propuesta de Intervención desde la Psicología de la Salud}
+
+Con base en los resultados obtenidos, se propone un modelo de intervención integral
+fundamentado en la evidencia científica disponible, orientado al manejo del estrés psicológico,
+la modulación del dolor y la mejora de la calidad de vida en mujeres con endometriosis.
+
+\subsection{Educación en Neurociencia del Dolor}
+
+La Educación en Neurociencia del Dolor (\textit{Pain Neuroscience Education}, PNE) consiste en
+explicar de forma accesible los mecanismos mediante los cuales el sistema nervioso genera y
+amplifica la experiencia dolorosa. Comprender el papel de la sensibilización central y la
+relación entre estrés e inflamación reduce la amenaza percibida del dolor, disminuye la
+catastrofización y mejora la adherencia terapéutica \parencite{Finnerup2023}.
+
+\subsection{Terapia Cognitivo-Conductual para Dolor Crónico}
+
+Los protocolos de TCC adaptados para dolor crónico han demostrado eficacia en la reducción de
+la catastrofización, la kinesiofobia y los síntomas depresivos y ansiosos. Las técnicas de
+reestructuración cognitiva permiten identificar y modificar patrones disfuncionales, mientras
+que la activación conductual graduada contribuye a la recuperación de la funcionalidad
+\parencite{Aerts2018}.
+
+\subsection{Técnicas Mente-Cuerpo}
+
+La práctica regular de \textit{mindfulness}, yoga terapéutico, respiración diafragmática y
+relajación muscular progresiva actúa directamente sobre los mecanismos neurobiológicos del
+estrés: reduce la activación del eje HPA, modula la respuesta inflamatoria, favorece la
+neuroplasticidad en los circuitos inhibitorios del dolor y promueve el equilibrio del sistema
+nervioso autónomo \parencite{Tracey2021}.
+
+\subsection{Intervención sobre el Sistema de Apoyo Social}
+
+Dado el impacto documentado del aislamiento social en la intensificación del estrés y el dolor
+crónico, la intervención debe incluir componentes orientados a fortalecer las redes de apoyo.
+La psicoeducación dirigida al entorno familiar y a los profesionales de salud contribuye a
+reducir la invalidación de la experiencia dolorosa y a crear entornos que favorecen el
+afrontamiento adaptativo \parencite{Aerts2018, Wang2021}.
+
+\subsection{Síntesis del Modelo de Intervención}
+
+La Tabla~\ref{tab:intervencion} resume los componentes del modelo propuesto.
+
+\begin{table*}[ht]
+\centering
+\caption{Modelo integral de intervención psicológica en endometriosis}
+\label{tab:intervencion}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{
+  >{\raggedright\arraybackslash}p{3.4cm}
+  >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{4.2cm}
+}
+\toprule
+\rowcolor{darkblue}
+\textcolor{white}{\textbf{Componente}} &
+\textcolor{white}{\textbf{Técnicas Principales}} &
+\textcolor{white}{\textbf{Objetivo Terapéutico}} \\
+\midrule
+\rowcolor{rowA}
+Educación en Neurociencia del Dolor &
+Sesiones psicoeducativas sobre mecanismos del dolor y el estrés &
+Reducir amenaza percibida y catastrofización \\
+
+\rowcolor{rowB}
+Terapia Cognitivo-Conductual &
+Reestructuración cognitiva, activación conductual graduada &
+Modificar patrones disfuncionales y recuperar funcionalidad \\
+
+\rowcolor{rowA}
+Técnicas Mente-Cuerpo &
+\textit{Mindfulness}, yoga terapéutico, respiración diafragmática &
+Modular eje HPA y favorecer inhibición descendente del dolor \\
+
+\rowcolor{rowB}
+Intervención en Red de Apoyo &
+Psicoeducación familiar, grupos de apoyo entre pares &
+Reducir aislamiento social y fortalecer afrontamiento \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+% ═══════════════════════════════════════════════════════════════
+%  6. LIMITACIONES DEL ESTUDIO
+% ═══════════════════════════════════════════════════════════════
+\section{Limitaciones del Estudio}
+
+La interpretación de los hallazgos debe considerar las siguientes limitaciones. El diseño
+de revisión narrativa no permite cuantificar el tamaño del efecto ni realizar síntesis
+estadística, lo que restringe la precisión de las conclusiones a la convergencia cualitativa
+de la evidencia. La inclusión de Google Scholar como fuente de búsqueda introduce sesgos de
+indexación no controlables que pueden haber excluido literatura relevante no indexada en
+bases curadas. La síntesis fue realizada sin evaluación formal de la calidad metodológica de
+los estudios incluidos mediante herramientas estandarizadas (p.\,ej., GRADE o
+Newcastle-Ottawa), incrementando el riesgo de sesgo de confirmación. La escasez de estudios
+primarios en el contexto latinoamericano limita la validez ecológica de las conclusiones para
+esta población. Finalmente, la variabilidad en los criterios diagnósticos de endometriosis y
+en los instrumentos de medición del estrés utilizados en los estudios revisados dificulta
+las comparaciones directas entre hallazgos.
+
+% ═══════════════════════════════════════════════════════════════
+%  7. CONCLUSIONES
+% ═══════════════════════════════════════════════════════════════
+\section{Conclusiones}
+
+La presente revisión narrativa permite sostener, a partir de la convergencia de la evidencia, que la endometriosis es una
+enfermedad inflamatoria crónica cuya complejidad trasciende ampliamente la dimensión
+ginecológica. La evidencia científica disponible confirma la existencia de una relación
+bidireccional entre el estrés psicológico crónico y la intensificación de la percepción del
+dolor, mediada por mecanismos neurobiológicos concretos: la activación del eje HPA, la
+respuesta neuroendocrina e inmune, y los fenómenos de sensibilización central.
+
+Los niveles sostenidos de cortisol y catecolaminas asociados al estrés crónico alteran el
+sistema inmunológico, promueven un estado proinflamatorio y se asocian tanto con la proliferación
+del tejido endometrial ectópico como con la amplificación de las señales nociceptivas a nivel
+central. Este mecanismo configura un ciclo de retroalimentación negativa en el que el dolor
+perpetúa el estrés y el estrés intensifica el dolor, con consecuencias documentadas sobre la
+salud mental y la calidad de vida.
+
+El retraso diagnóstico, que en promedio supera los siete años desde el inicio de los síntomas,
+constituye un factor agravante de la carga psicológica que no puede soslayarse en ningún
+análisis integral. La normalización del dolor menstrual y la limitada formación de los
+profesionales de salud en el reconocimiento temprano representan obstáculos sistémicos que
+deben ser abordados mediante políticas de salud pública y educación médica continuada.
+
+Desde la psicología de la salud, la evidencia revisada respalda la eficacia de intervenciones
+multicomponente que integran educación en neurociencia del dolor, terapia cognitivo-conductual,
+técnicas mente-cuerpo y apoyo psicosocial. Estas intervenciones no constituyen un complemento
+secundario al tratamiento médico-quirúrgico, sino un componente terapéutico de primer orden
+cuya implementación puede modificar los mecanismos neurobiológicos que subyacen a la
+experiencia del dolor.
+
+Finalmente, la escasez de investigación en el contexto latinoamericano representa una limitación
+del conocimiento actual y una oportunidad de desarrollo científico relevante. Se recomienda el
+desarrollo de estudios longitudinales que permitan identificar factores de riesgo psicológicos
+específicos para esta población, así como ensayos clínicos que evalúen la efectividad de los
+modelos de intervención propuestos en contextos sanitarios de la región.
+
+% ═══════════════════════════════════════════════════════════════
+%  8. CONSIDERACIONES ÉTICAS
+% ═══════════════════════════════════════════════════════════════
+\section{Consideraciones Éticas}
+
+La presente investigación se desarrolló bajo los principios éticos fundamentales que rigen la
+producción académica científica. Se garantizó la honestidad intelectual mediante el
+reconocimiento explícito y la citación correcta de todos los autores y fuentes consultadas, en
+estricto cumplimiento de las normas APA séptima edición, con el fin de evitar cualquier forma
+de plagio o apropiación indebida de ideas ajenas.
+
+Se mantuvo la objetividad científica a lo largo de todo el proceso mediante la adopción de
+criterios de selección bibliográfica transparentes y la búsqueda activa de estudios que
+pudieran contradecir o matizar los hallazgos centrales, evitando el sesgo de confirmación. La
+síntesis de los resultados se realizó sin manipulación ni distorsión de los datos reportados en
+las fuentes primarias.
+
+Se respetaron los derechos de propiedad intelectual de todos los autores citados, asegurando el
+uso justo de los materiales revisados y la correcta distinción entre las ideas propias y las
+provenientes de la literatura científica.
+
+% ═══════════════════════════════════════════════════════════════
+%  REFERENCIAS BIBLIOGRÁFICAS
+% ═══════════════════════════════════════════════════════════════
+\onecolumn
+\printbibliography[title={Referencias Bibliográficas}]
+
+\end{document}

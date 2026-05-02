@@ -1,0 +1,17 @@
+# LaTeX auxiliary files
+files/*.aux
+files/*.bbl
+files/*.bcf
+files/*.blg
+files/*.log
+files/*.out
+files/*.run.xml
+files/*.fls
+files/*.fdb_latexmk
+files/*.synctex.gz
+files/*.toc
+files/*.lof
+files/*.lot
+
+# Compressed archives
+*.zip
