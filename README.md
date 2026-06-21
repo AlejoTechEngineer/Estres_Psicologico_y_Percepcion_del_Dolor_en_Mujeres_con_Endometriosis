@@ -77,6 +77,24 @@ Activación sostenida del Eje HPA
 
 ---
 
+## Arquitectura
+
+```mermaid
+flowchart TD
+    A[files/endometriosis_articulo.tex] --> B[files/referencias.bib - BibLaTeX APA 7ma ed]
+    A --> C[pdflatex - primera pasada]
+    C --> D[biber - referencias]
+    D --> E[pdflatex - segunda pasada]
+    E --> F[pdflatex - tercera pasada]
+    F --> G[endometriosis_articulo.pdf - Articulo compilado]
+    G --> H{Contenido}
+    H --> I[Estres cronico - Eje HPA activado]
+    H --> J[Sensibilizacion central del dolor]
+    H --> K[Impacto psicologico - 75pct con sintomas depresivos]
+    I & J --> L[Ciclo retroalimentacion Dolor - Estres - Dolor]
+    K --> M[Intervenciones: TCC + Mindfulness + PNE]
+```
+
 ## Estructura del Repositorio
 
 ```
