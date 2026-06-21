@@ -29,6 +29,24 @@
 
 ---
 
+## Arquitectura
+
+```mermaid
+flowchart TD
+    A[files/endometriosis_articulo.tex] --> B[files/referencias.bib - BibLaTeX APA 7ma ed]
+    A --> C[pdflatex - primera pasada]
+    C --> D[biber - referencias]
+    D --> E[pdflatex - segunda pasada]
+    E --> F[pdflatex - tercera pasada]
+    F --> G[endometriosis_articulo.pdf - Articulo compilado]
+    G --> H{Contenido}
+    H --> I[Estres cronico - Eje HPA activado]
+    H --> J[Sensibilizacion central del dolor]
+    H --> K[Impacto psicologico - 75pct con sintomas depresivos]
+    I & J --> L[Ciclo retroalimentacion Dolor - Estres - Dolor]
+    K --> M[Intervenciones: TCC + Mindfulness + PNE]
+```
+
 ## Resumen
 
 La endometriosis afecta aproximadamente al **10 % de las mujeres en edad reproductiva** a nivel global (más de 190 millones de personas), constituyendo una de las enfermedades ginecológicas crónicas de mayor impacto en la calidad de vida. A pesar de su elevada prevalencia, su dimensión psicológica permanece subvalorada en los modelos de atención clínica.
@@ -76,24 +94,6 @@ Activación sostenida del Eje HPA
 | Intervención en Red de Apoyo | Psicoeducación familiar, grupos entre pares | Reduce aislamiento y fortalece afrontamiento |
 
 ---
-
-## Arquitectura
-
-```mermaid
-flowchart TD
-    A[files/endometriosis_articulo.tex] --> B[files/referencias.bib - BibLaTeX APA 7ma ed]
-    A --> C[pdflatex - primera pasada]
-    C --> D[biber - referencias]
-    D --> E[pdflatex - segunda pasada]
-    E --> F[pdflatex - tercera pasada]
-    F --> G[endometriosis_articulo.pdf - Articulo compilado]
-    G --> H{Contenido}
-    H --> I[Estres cronico - Eje HPA activado]
-    H --> J[Sensibilizacion central del dolor]
-    H --> K[Impacto psicologico - 75pct con sintomas depresivos]
-    I & J --> L[Ciclo retroalimentacion Dolor - Estres - Dolor]
-    K --> M[Intervenciones: TCC + Mindfulness + PNE]
-```
 
 ## Estructura del Repositorio
 
