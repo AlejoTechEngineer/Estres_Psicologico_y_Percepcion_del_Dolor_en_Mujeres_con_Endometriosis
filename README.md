@@ -1,12 +1,18 @@
+<div align="center">
+
 # Estrés Psicológico y Percepción del Dolor en Mujeres con Endometriosis
 
 > **Revisión Narrativa con Estrategia de Búsqueda Sistemática**
 
-[![LaTeX](https://img.shields.io/badge/Escrito%20en-LaTeX-008080?style=flat-square&logo=latex&logoColor=white)](https://www.latex-project.org/)
-[![PDF](https://img.shields.io/badge/Artículo-PDF%20disponible-DC143C?style=flat-square&logo=adobe-acrobat-reader&logoColor=white)](./endometriosis_articulo.pdf)
-[![Citas](https://img.shields.io/badge/Normas-APA%207%C2%AA%20edición-003087?style=flat-square)](https://apastyle.apa.org/)
-[![Biber](https://img.shields.io/badge/Bibliografía-BibLaTeX%20%2B%20Biber-6A0DAD?style=flat-square)](http://biblatex-biber.sourceforge.net/)
-[![Licencia](https://img.shields.io/badge/Licencia-CC%20BY--NC%204.0-lightgrey?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![LaTeX](https://img.shields.io/badge/Escrito%20en-LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)](https://www.latex-project.org/)
+[![PDF](https://img.shields.io/badge/Artículo-PDF%20disponible-DC143C?style=for-the-badge&logo=adobe-acrobat-reader&logoColor=white)](./endometriosis_articulo.pdf)
+[![Citas](https://img.shields.io/badge/Normas-APA%207%C2%AA%20edición-003087?style=for-the-badge)](https://apastyle.apa.org/)
+[![Biber](https://img.shields.io/badge/Bibliografía-BibLaTeX%20%2B%20Biber-6A0DAD?style=for-the-badge)](http://biblatex-biber.sourceforge.net/)
+[![Licencia](https://img.shields.io/badge/Licencia-CC%20BY--NC%204.0-lightgrey?style=for-the-badge)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+</div>
+
+---
 
 ---
 
